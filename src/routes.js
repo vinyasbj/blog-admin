@@ -1,6 +1,9 @@
 import React from 'react';
+// import NewArticles from './views/NewArticles/NewArticles';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
+const Categories = React.lazy(() => import('./views/Base/Categories'));
+const NewArticles = React.lazy(() => import('./views/NewArticles/NewArticles'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels'));
 const Collapses = React.lazy(() => import('./views/Base/Collapses'));
@@ -40,10 +43,12 @@ const User = React.lazy(() => import('./views/Users/User'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/new-articles', name: 'New Articles', component: NewArticles },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
   { path: '/base', exact: true, name: 'Base', component: Cards },
+  { path: '/base/Categories', name: 'Categories', component: Categories },
   { path: '/base/cards', name: 'Cards', component: Cards },
   { path: '/base/forms', name: 'Forms', component: Forms },
   { path: '/base/switches', name: 'Switches', component: Switches },

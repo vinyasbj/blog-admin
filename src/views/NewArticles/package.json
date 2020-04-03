@@ -1,0 +1,6 @@
+{
+    "name": "New Articles",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./NewArticles.js"
+  }

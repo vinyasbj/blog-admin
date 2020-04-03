@@ -16,7 +16,9 @@ import {
   Tables,
   Tabs,
   Tooltips,
+  Categories
 } from './Base';
+// import {Categories} from './MasterTables'
 
 import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './Buttons';
 import Charts from './Charts';
@@ -28,6 +30,7 @@ import { Colors, Typography } from './Theme';
 import Widgets from './Widgets';
 
 export {
+  Categories,
   Badges,
   Typography,
   Colors,
