@@ -4,6 +4,7 @@ import React from 'react';
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Categories = React.lazy(() => import('./views/Base/Categories'));
 const NewArticles = React.lazy(() => import('./views/NewArticles/NewArticles'));
+const ViewArticle = React.lazy(() => import('./views/NewArticles/ViewArticle/ViewArticle'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels'));
 const Collapses = React.lazy(() => import('./views/Base/Collapses'));
@@ -44,6 +45,7 @@ const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/new-articles', name: 'New Articles', component: NewArticles },
+  { path: '/articles/:id', name: 'View Articles', component: ViewArticle },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
