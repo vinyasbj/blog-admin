@@ -38,11 +38,6 @@ export default {
     //   icon: 'icon-pencil',
     // },
     {
-        name: 'Categories',
-        url: '/Categories',
-        icon: 'icon-pencil',
-    },
-    {
       title: true,
       name: 'Components',
       wrapper: {
@@ -60,6 +55,11 @@ export default {
             url: '/base/Categories',
             icon: 'icon-pencil',
         },
+        {
+            name: 'Articles',
+            url: '/base/articles',
+            icon: 'icon-pencil',
+        }
         // {
         //   name: 'Breadcrumbs',
         //   url: '/base/breadcrumbs',

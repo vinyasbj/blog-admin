@@ -141,7 +141,7 @@ class NewArticles extends Component {
                         </Card.Text>
                         <Card.Footer>
                         <small className="text-muted">Last updated 3 mins ago</small>
-                        <Link to={"articles/"+ key }> View</Link>
+                        <Link to={"new-articles/"+ key }> View</Link>
                         </Card.Footer>
                       </Col>
                       </Row>
