@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card,Row,Col} from "react-bootstrap";
 import api from '../../../config/api';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 class ViewArticle extends Component {
     constructor(props){
         super(props)
@@ -27,7 +28,32 @@ class ViewArticle extends Component {
     render() {
         return (
             <div className="content">
+                
+                <div className="card">
+                <div className="card-header">
                 {this.state.article.title}
+                </div>
+                <div className="card-body">
+                    <div className="bd-example">
+                    <dl className="row">
+                        <dt className="col-sm-3">Description</dt>
+                        <dd className="col-sm-9">{this.state.article.description}</dd>
+
+                        <dt className="col-sm-3">Image</dt>
+                        <dd className="col-sm-9">
+                        <p>{this.state.article.urlToImage}</p>
+                        </dd>
+                        <dt className="col-sm-3">Published At</dt>
+                        <dd className="col-sm-9">
+                        <p>{this.state.article.publishedAt}</p>
+                        </dd>
+
+                        <dt className="col-sm-3">Source URL</dt>
+                        <dd className="col-sm-9"> <a target="_blank" href={this.state.article.url}> View Source</a> </dd>
+                    </dl>
+                    </div>
+                </div>
+                </div>
             </div>
     )}
 }

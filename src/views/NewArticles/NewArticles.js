@@ -50,7 +50,7 @@ class NewArticles extends Component {
     }
 
     getArticles(){
-      axios.get(`${api.base.newsUrl}/top-headlines?q=${this.state.query}&country=${this.state.country_code}&apiKey=${api.apikey.key}`)
+      axios.get(`${api.base.newsUrl}/top-headlines?q=${this.state.query}&language=en&country=${this.state.country_code}&apiKey=${api.apikey.key}`)
         .then((response)=>{
             console.log(response);
             this.setState({articles: response.data.articles})
@@ -62,7 +62,7 @@ class NewArticles extends Component {
     }
 
     getArticlesWithCategory(){
-      axios.get(`${api.base.newsUrl}/top-headlines?q=${this.state.query}&category=${this.state.category}&apiKey=${api.apikey.key}`)
+      axios.get(`${api.base.newsUrl}/top-headlines?q=${this.state.query}&language=en&category=${this.state.category}&apiKey=${api.apikey.key}`)
         .then((response)=>{
             console.log(response);
             this.setState({articles: response.data.articles})
