@@ -40,7 +40,8 @@ class NewBlogPosts extends React.Component {
   }
 
   storeArticle(article){
-    localStorage.setItem("title_description",article.description);
+    localStorage.setItem("title",article.title);
+    localStorage.setItem("title_description",article.title_description);
     localStorage.setItem("imageUrl",article.urlToImage);
     localStorage.setItem("author",article.author);
     localStorage.setItem("source",article.source.name);
