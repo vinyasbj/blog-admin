@@ -13,6 +13,7 @@ import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import NewBlogPosts from "./views/NewBlogPosts";
+import Categories from "./views/categories";
 
 export default [
   {
@@ -35,6 +36,11 @@ export default [
     path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
+  },
+  {
+    path: "/categories",
+    layout: DefaultLayout,
+    component: Categories
   },
   {
     path: "/errors",

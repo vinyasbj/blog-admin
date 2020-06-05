@@ -17,12 +17,32 @@ class AddNewPost extends Component  {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      sub_categories: []
     }
+    this.getCategories = this.getCategories.bind(this);
+    this.getOptions = this.getOptions.bind(this);
   }
 
   componentDidMount(){
-   
+   this.getCategories();
+   this.getOptions();
+  }
+
+  getCategories(){
+    axios.get(`${api.base.url}/sub_categories`)
+    .then((response) => {
+      console.log(response);
+      // response.map((res)=>{
+      //   return this.setState({options: {}})
+      // })
+      this.setState({sub_categories: response.data})
+      // debugger
+    }).catch((error) => {
+
+    })
+  }
+
+  getOptions(){
   }
   render(){
     return(
@@ -33,7 +53,7 @@ class AddNewPost extends Component  {
             title_description: '' || localStorage.getItem('title_description'),
             description: '',
             imageUrl: ''|| localStorage.getItem('imageUrl'),
-            sub_category: '',
+            sub_category: null,
           }}
 
           validate = {
@@ -134,14 +154,6 @@ class AddNewPost extends Component  {
                         }
                     </Col>
                     <Col md="12" className="form-group">
-                    {/* <ReactQuill  
-                      name="editor"
-                      type="text"
-                      placeholder="Your Blog Title Description"
-                      value={values.description}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      /> */}
                       <Field  name= 'description' >
                         {({field}) => <ReactQuill  
                           type="text"
@@ -159,15 +171,24 @@ class AddNewPost extends Component  {
                           </span>  
                         }
                     </Col>
-                    <Col md="12" className="form-group">
-                    <FormInput  
-                      name="sub_category"
-                      type="text"
-                      placeholder="Your Blog Title sub_category"
-                      value={values.sub_category}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      />
+                    <Col md="6" className="form-group">
+                      <FormSelect
+                        // options={ this.state.options  }
+                        id="sub_category"  
+                        name="sub_category"
+                        placeholder="Your Blog Title category"
+                        value={values.sub_category}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        >
+                          <option value="">Choose...</option>
+                        { this.state.sub_categories.map(sub_category => { 
+                           return <option value={sub_category._id}>{sub_category.name}</option>
+                        })}
+                      </FormSelect>
+                      {/* <Field component="select" name="">
+
+                      </Field> */}
                       {
                           errors.sub_category && touched.sub_category &&  
                           <span style={{ description:"red", fontWeight: "bold" }}>  
@@ -175,6 +196,26 @@ class AddNewPost extends Component  {
                           </span>  
                         }
                     </Col>
+                    {/* <Col md="6" className="form-group">
+                      <FormSelect
+                        id="sub category"  
+                        name="sub_category"
+                        type="select"
+                        placeholder="Your Blog Title sub_category"
+                        value={values.sub_category}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        >
+                        <option>Choose...</option>
+                        <option>...</option>
+                      </FormSelect>
+                        {
+                            errors.sub_category && touched.sub_category &&  
+                            <span style={{ description:"red", fontWeight: "bold" }}>  
+                            {errors.sub_category}
+                            </span>  
+                          }
+                    </Col> */}
                   </Row>
                 <Button variant="primary" type="submit"  disabled={isSubmitting}>
                   Submit
