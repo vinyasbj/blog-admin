@@ -1,7 +1,7 @@
 const api = {
     base: {
-        // url: "https://blog.vinyas.im",
-        url: "http://localhost:3000",
+        url: "https://blog.vinyas.im",
+        // url: "http://localhost:3000",
         newsUrl: "https://newsapi.org/v2"
     },
     apikey: {
