@@ -22,24 +22,24 @@ export default function() {
       to: "/add-new-post",
     },
     {
-      title: "Forms & Components",
+      title: "Categories",
       htmlBefore: '<i class="material-icons">view_module</i>',
-      to: "/components-overview",
+      to: "/categories",
     },
-    {
-      title: "Tables",
-      htmlBefore: '<i class="material-icons">table_chart</i>',
-      to: "/tables",
-    },
-    {
-      title: "User Profile",
-      htmlBefore: '<i class="material-icons">person</i>',
-      to: "/user-profile-lite",
-    },
-    {
-      title: "Errors",
-      htmlBefore: '<i class="material-icons">error</i>',
-      to: "/errors",
-    }
+    // {
+    //   title: "Tables",
+    //   htmlBefore: '<i class="material-icons">table_chart</i>',
+    //   to: "/tables",
+    // },
+    // {
+    //   title: "User Profile",
+    //   htmlBefore: '<i class="material-icons">person</i>',
+    //   to: "/user-profile-lite",
+    // },
+    // {
+    //   title: "Errors",
+    //   htmlBefore: '<i class="material-icons">error</i>',
+    //   to: "/errors",
+    // }
   ];
 }
