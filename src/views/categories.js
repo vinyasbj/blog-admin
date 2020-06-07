@@ -105,10 +105,11 @@ class Categories extends Component{
 
     createSubCategory(e){
         // debugger
-        // e.preventDefault();
+        e.preventDefault();
         axios.post(`${api.base.url}/sub_categories/`,{name: e.target.subName.value,category: e.target.category.value})
         .then((response) => {
             console.log(response);
+            window.location.reload();
             // this.setState({subCategories: response.data})
         }).catch((error) => {
             
