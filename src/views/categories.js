@@ -92,11 +92,12 @@ class Categories extends Component{
     }
 
     createCategory(e){
-        // e.preventDefault();
+        e.preventDefault();
         axios.post(`${api.base.url}/categories/`,{name: e.target.name.value})
         .then((response) => {
             console.log(response);
-            this.setState({categories: response.data})
+            window.location.reload();
+            // this.setState({categories: response.data})
         }).catch((error) => {
             
         })
@@ -108,7 +109,7 @@ class Categories extends Component{
         axios.post(`${api.base.url}/sub_categories/`,{name: e.target.subName.value,category: e.target.category.value})
         .then((response) => {
             console.log(response);
-            this.setState({subCategories: response.data})
+            // this.setState({subCategories: response.data})
         }).catch((error) => {
             
         })
