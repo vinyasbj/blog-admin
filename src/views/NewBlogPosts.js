@@ -48,7 +48,7 @@ class NewBlogPosts extends React.Component {
   }
   
   getArticles(){
-    axios.get(`${api.base.newsUrl}/top-headlines?language=en&country=${this.state.country_code}&apiKey=${api.apikey.key}`)
+    axios.get(`https://cors-anywhere.herokuapp.com/${api.base.newsUrl}/top-headlines?language=en&country=${this.state.country_code}&apiKey=${api.apikey.key}`)
         .then((response)=>{
             console.log(response);
             this.setState({PostsListOne: response.data.articles})
