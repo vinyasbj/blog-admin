@@ -11,7 +11,6 @@ import {
   Col,
   Card,
   CardBody,
-  CardFooter,
   Badge,
   Button
 } from "shards-react";
@@ -61,10 +60,7 @@ class NewBlogPosts extends React.Component {
 
   render() {
     const {
-      PostsListOne,
-      PostsListTwo,
-      PostsListThree,
-      PostsListFour
+      PostsListOne
     } = this.state;
 
     return (
@@ -101,7 +97,7 @@ class NewBlogPosts extends React.Component {
                 </div>
                 <CardBody>
                   <h5 className="card-title">
-                    <a href={post.url} target="_blank" className="text-fiord-blue">
+                    <a href={post.url} className="text-fiord-blue">
                       {post.title}
                     </a>
                     <Link to={`add-new-post`}>  <Button  onClick={() => this.storeArticle(post)}>Write UP</Button> </Link>
